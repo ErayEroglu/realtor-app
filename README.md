@@ -48,31 +48,31 @@ This documentation provides an overview of a NestJS application that uses TypeSc
 ## Table of Contents
 
 1. [Authentication Service](#authentication-service)
-   - [Prerequisites](#prerequisites)
-   - [Dependencies](#dependencies)
-   - [Configuration](#configuration)
-   - [Usage](#usage)
-   - [Authentication Endpoints](#authentication-endpoints)
-     - [Sign Up](#sign-up)
-     - [Sign In](#sign-in)
-     - [Generate Product Key](#generate-product-key)
+ - [Prerequisites](#prerequisites)
+ - [Dependencies](#dependencies)
+ - [Configuration](#configuration)
+ - [Usage](#usage)
+ - [Authentication Endpoints](#authentication-endpoints)
+ - [Sign Up](#sign-up)
+ - [Sign In](#sign-in)
+ - [Generate Product Key](#generate-product-key)
 2. [Home Management Service](#home-management-service)
-   - [Overview](#overview)
-   - [Dependencies](#dependencies-1)
-   - [Configuration](#configuration-1)
-   - [Usage](#usage-1)
-   - [HomeController - Managing Homes](#homecontroller---managing-homes)
-     - [Home Management Endpoints](#home-management-endpoints)
-       - [Get Homes](#get-homes)
-       - [Get Home by ID](#get-home-by-id)
-       - [Create Home](#create-home)
-       - [Update Home by ID](#update-home-by-id)
-       - [Delete Home by ID](#delete-home-by-id)
-       - [Inquire about a Home](#inquire-about-a-home)
-       - [Get Messages for a Home](#get-messages-for-a-home)
-     - [Guards and Decorators](#guards-and-decorators)
-     - [Pipes](#pipes)
-   - [Additional Notes](#additional-notes)
+ - [Overview](#overview)
+ - [Dependencies](#dependencies-1)
+ - [Configuration](#configuration-1)
+ - [Usage](#usage-1)
+ - [HomeController - Managing Homes](#homecontroller---managing-homes)
+ - [Home Management Endpoints](#home-management-endpoints)
+ - [Get Homes](#get-homes)
+ - [Get Home by ID](#get-home-by-id)
+ - [Create Home](#create-home)
+ - [Update Home by ID](#update-home-by-id)
+ - [Delete Home by ID](#delete-home-by-id)
+ - [Inquire about a Home](#inquire-about-a-home)
+ - [Get Messages for a Home](#get-messages-for-a-home)
+ - [Guards and Decorators](#guards-and-decorators)
+ - [Pipes](#pipes)
+ - [Additional Notes](#additional-notes)
 
 ## Authentication Service
 
@@ -102,15 +102,15 @@ The authentication service provides several endpoints for user authentication an
 - **Method**: `POST`
 - **Description**: Sign up a new user with the provided credentials.
 - **Request Body**:
-    ```json
-    {
-        "email": "user@example.com",
-        "password": "password123",
-        "name": "John Doe",
-        "phone": "123-456-7890",
-        "productKey": "product_key"
-    }
-    ```
+ ```json
+ {
+ "email": "user@example.com",
+ "password": "password123",
+ "name": "John Doe",
+ "phone": "123-456-7890",
+ "productKey": "product_key"
+ }
+ ```
 - **Response**: Returns a JWT token upon successful registration.
 
 #### Sign In
@@ -119,12 +119,12 @@ The authentication service provides several endpoints for user authentication an
 - **Method**: `POST`
 - **Description**: Sign in an existing user with their credentials.
 - **Request Body**:
-    ```json
-    {
-        "email": "user@example.com",
-        "password": "password123"
-    }
-    ```
+ ```json
+ {
+ "email": "user@example.com",
+ "password": "password123"
+ }
+ ```
 - **Response**: Returns a JWT token upon successful authentication.
 
 #### Generate Product Key
@@ -133,12 +133,12 @@ The authentication service provides several endpoints for user authentication an
 - **Method**: `POST`
 - **Description**: Generate a product key for users who want to sign up as an admin or realtor.
 - **Request Body**:
-    ```json
-    {
-        "email": "user@example.com",
-        "userType": "ADMIN"
-    }
-    ```
+ ```json
+ {
+ "email": "user@example.com",
+ "userType": "ADMIN"
+ }
+ ```
 - **Response**: Returns the generated product key.
 
 ## Home Management Service
@@ -171,10 +171,10 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Method**: `GET`
 - **Description**: Get a list of homes based on optional filters like city, price range, and property type.
 - **Query Parameters**:
-    - `city`: Filter by city name.
-    - `minPrice`: Filter by minimum price.
-    - `maxPrice`: Filter by maximum price.
-    - `propertyType`: Filter by property type (e.g., HOUSE, APARTMENT).
+ - `city`: Filter by city name.
+ - `minPrice`: Filter by minimum price.
+ - `maxPrice`: Filter by maximum price.
+ - `propertyType`: Filter by property type (e.g., HOUSE, APARTMENT).
 - **Response**: Returns an array of `homeResponseDto` objects.
 
 ##### Get Home by ID
@@ -183,7 +183,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Method**: `GET`
 - **Description**: Get a specific home by its ID.
 - **URL Parameter**:
-    - `id`: The ID of the home to retrieve.
+ - `id`: The ID of the home to retrieve.
 - **Response**: Returns a `homeResponseDto` object.
 
 ##### Create Home
@@ -192,30 +192,30 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Method**: `POST`
 - **Description**: Create a new home listing.
 - **Request Body**:
-    ```json
-    {
-        "address": "123 Main St",
-        "price": 250000,
-        "land_size": 2000,
-        "city": "Example City",
-        "propertyType": "HOUSE",
-        "bedroom": 3,
-        "bathroom": 2,
-        "images": [
-            {"url": "image1.jpg"},
-            {"url": "image2.jpg"}
-        ]
-    }
-    ```
+ ```json
+ {
+ "address": "123 Main St",
+ "price": 250000,
+ "land_size": 2000,
+ "city": "Example City",
+ "propertyType": "HOUSE",
+ "bedroom": 3,
+ "bathroom": 2,
+ "images": [
+ {"url": "image1.jpg"},
+ {"url": "image2.jpg"}
+ ]
+ }
+ ```
 - **Response**: Returns a `homeResponseDto` object for the newly created home.
 
 ##### Update Home by ID
 
 - **Endpoint**: `/home/:id`
 - **Method**: `PUT`
-- **Description**: Update an existing home listing by its ID.
+- **Description": Update an existing home listing by its ID.
 - **URL Parameter**:
-    - `id`: The ID of the home to update.
+ - `id`: The ID of the home to update.
 - **Request Body**: Fields to update (e.g., `address`, `price`, etc.).
 - **Response**: Returns a `homeResponseDto` object for the updated home.
 
@@ -225,7 +225,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Method**: `DELETE`
 - **Description**: Delete a home listing by its ID.
 - **URL Parameter**:
-    - `id`: The ID of the home to delete.
+ - `id`: The ID of the home to delete.
 - **Response**: No content (204 No Content) on successful deletion.
 
 ##### Inquire about a Home
@@ -234,13 +234,13 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Method**: `POST`
 - **Description**: Send an inquiry message to the realtor of a specific home.
 - **URL Parameter**:
-    - `id`: The ID of the home to inquire about.
+ - `id`: The ID of the home to inquire about.
 - **Request Body**:
-    ```json
-    {
-        "message": "I'm interested in this property."
-    }
-    ```
+ ```json
+ {
+ "message": "I'm interested in this property."
+ }
+ ```
 - **Response**: Returns the inquiry message details.
 
 ##### Get Messages for a Home
@@ -249,7 +249,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Method**: `GET`
 - **Description**: Retrieve messages related to a specific home. Only realtors can access this endpoint.
 - **URL Parameter**:
-    - `id`: The ID of the home to retrieve messages for.
+ - `id`: The ID of the home to retrieve messages for.
 - **Response**: Returns an array of messages, including buyer information.
 
 #### Guards and Decorators
