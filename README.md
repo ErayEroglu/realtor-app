@@ -22,7 +22,7 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 ### 4. PostgreSQL
 
-[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It is an excellent choice for building scalable and reliable applications.
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It's an excellent choice for building scalable and reliable applications.
 
 ## Project Objectives
 
@@ -37,6 +37,7 @@ Our project aims to achieve the following objectives:
 4. **Scalable Database Solution**: Utilize PostgreSQL as a scalable and robust relational database, enabling our application to handle data effectively as it grows.
 
 5. **Maintainability and Readability**: Adhere to best practices and coding standards to ensure that the codebase is maintainable, easy to read, and scalable as the project evolves.
+
 
 # Application Documentation
 
@@ -130,7 +131,7 @@ The authentication service provides several endpoints for user authentication an
 
 - **Endpoint**: `/auth/key`
 - **Method**: `POST`
-- **Description**: Generate a product key for users who want to sign up as an administrator or realtor.
+- **Description**: Generate a product key for users who want to sign up as an admin or realtor.
 - **Request Body**:
     ```json
     {
@@ -230,7 +231,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 ##### Inquire about a Home
 
 - **Endpoint**: `/home/inquire/:id`
-- **Method**: `POST`
+- **Method**: âPOSTâ
 - **Description**: Send an inquiry message to the realtor of a specific home.
 - **URL Parameter**:
     - `id`: The ID of the home to inquire about.
@@ -245,7 +246,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 ##### Get Messages for a Home
 
 - **Endpoint**: `/home/:id/messages`
-- **Method**: `GET`
+- **Method**: âGETâ
 - **Description**: Retrieve messages related to a specific home. Only realtors can access this endpoint.
 - **URL Parameter**:
     - `id`: The ID of the home to retrieve messages for.
@@ -265,7 +266,8 @@ The `HomeController` is responsible for managing homes, including listing, creat
 ### Additional Notes
 
 - Users who want to sign up as buyers do not need a product key.
-- For administrator and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
+- For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
+
 
 ## Conclusion
 
@@ -294,7 +296,7 @@ $ npm run start:prod
 
 ## Test
 
-There are test cases written in home.service.spec.ts and home.controller.spec.ts. You can run and test these.
+There are test cases written in home.service.spec.ts and home.controller.spec.ts. You can run and test them.
 
 ```bash
 # unit tests
