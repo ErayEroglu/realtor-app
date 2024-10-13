@@ -14,7 +14,7 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 ### 2. TypeScript
 
-[TypeScript](https://www.typescriptlang.org/) is a strongly typed superset of JavaScript that brings static typing to your development workflow. This enables better code quality, improved tooling, and enhanced developer productivity.
+[TypeScript](https://www.typescriptlang.org/) is a strongly typed superset of JavaScript that brings static typing to the development workflow. This ensures better code quality, improved tooling, and enhanced developer productivity.
 
 ### 3. Prisma
 
@@ -22,23 +22,24 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 ### 4. PostgreSQL
 
-[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It's an excellent choice for building scalable and reliable applications.
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It is an excellent choice for building scalable and reliable applications.
 
 ## Project Objectives
 
 Our project aims to achieve the following objectives:
 
-1. **Efficient Backend Development**: Utilize Nest.js to rapidly develop the backend with well-structured code and powerful features.
+1. **Efficient Backend Development**: Utilize Nest.js to rapidly develop a backend with well-structured code and powerful features.
 
 2. **Type-Safe Code**: Leverage TypeScript to ensure type safety throughout the application, minimizing runtime errors and providing an enhanced developer experience.
 
 3. **Robust Database Interactions**: Utilize Prisma to handle database interactions seamlessly, ensuring optimal performance and reliable data management.
 
-4. **Scalable Database Solution**: Utilize PostgreSQL as a scalable and robust relational database, enabling our application to handle data effectively as it grows.
+4. **Scalable Database Solution**: Use PostgreSQL as a scalable and robust relational database, enabling our application to manage data effectively as it grows.
 
 5. **Maintainability and Readability**: Adhere to best practices and coding standards to ensure that the codebase is maintainable, easy to read, and scalable as the project evolves.
 
-## Application Documentation
+
+# Application Documentation
 
 ## Overview
 
@@ -265,7 +266,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 ### Additional Notes
 
 - Users who want to sign up as buyers do not need a product key.
-- For admin and realtor registrations, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
+- For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
 
 
 ## Conclusion
@@ -280,7 +281,7 @@ P.S.: This document is written based on the sentence and document organization o
 $ npm install
 ```
 
-## Running the app
+## Running the App
 
 ```bash
 # development
@@ -295,7 +296,7 @@ $ npm run start:prod
 
 ## Test
 
-There are test cases written in `home.service.spec.ts` and `home.controller.spec.ts`. You can run and test these.
+There are test cases written in home.service.spec.ts and home.controller.spec.ts. You can run and test these.
 
 ```bash
 # unit tests
