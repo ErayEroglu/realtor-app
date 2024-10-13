@@ -1,6 +1,6 @@
 # Realtor App: Building a Scalable Web Application with Nest.js, TypeScript, Prisma, and PostgreSQL
 
-(POSTGRESQL IS CLOSED BECAUSE OF COSTS!)
+(POSTGRESQL IS CLOSED DUE TO COSTS!)
 
 ## Overview
 
@@ -28,7 +28,7 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 Our project aims to achieve the following objectives:
 
-1. **Efficient Backend Development**: Utilize Nest.js to rapidly develop a backend with well-structured code and powerful features.
+1. **Efficient Backend Development**: Utilize Nest.js to rapidly develop the backend with well-structured code and powerful features.
 
 2. **Type-Safe Code**: Leverage TypeScript to ensure type safety throughout the application, minimizing runtime errors and providing an enhanced developer experience.
 
@@ -38,8 +38,7 @@ Our project aims to achieve the following objectives:
 
 5. **Maintainability and Readability**: Adhere to best practices and coding standards to ensure that the codebase is maintainable, easy to read, and scalable as the project evolves.
 
-
-# Application Documentation
+## Application Documentation
 
 ## Overview
 
@@ -266,7 +265,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 ### Additional Notes
 
 - Users who want to sign up as buyers do not need a product key.
-- For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
+- For admin and realtor registrations, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
 
 
 ## Conclusion
@@ -296,7 +295,7 @@ $ npm run start:prod
 
 ## Test
 
-There are test cases written in home.service.spec.ts and home.controller.spec.ts. You can run and test these.
+There are test cases written in `home.service.spec.ts` and `home.controller.spec.ts`. You can run and test these.
 
 ```bash
 # unit tests
