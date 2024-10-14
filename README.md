@@ -4,7 +4,7 @@
 
 ## Overview
 
-Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma, and PostgreSQL to build a robust and scalable web application. This project embodies modern development practices, utilizing a strong, typed language, an efficient backend framework, an ORM for database interaction, and a powerful relational database.
+Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma, and PostgreSQL to build a robust and scalable web application. This project embodies modern development practices, utilizing a strong, typed language; an efficient backend framework; an ORM for database interaction; and a powerful relational database.
 
 ## Technology Stack
 
@@ -14,15 +14,15 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 ### 2. TypeScript
 
-[TypeScript](https://www.typescriptlang.org/) is a strongly typed superset of JavaScript that brings static typing to your development workflow. This enables better code quality, improved tooling, and enhanced developer productivity.
+[TypeScript](https://www.typescriptlang.org/) is a strongly-typed superset of JavaScript that brings static typing to your development workflow. This enables better code quality, improved tooling, and enhanced developer productivity.
 
 ### 3. Prisma
 
-[Prisma](https://www.prisma.io/) is a modern database toolkit that simplifies database access with an auto-generated query builder. It allows us to work with databases using a type-safe API, making database interactions more efficient and secure.
+[Prisma](https://www.prisma.io/) is a modern database toolkit that simplifies database access with an auto-generated query builder. It allows you to work with databases using a type-safe API, making database interactions more efficient and secure.
 
 ### 4. PostgreSQL
 
-[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It's an excellent choice for building scalable and reliable applications.
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It is an excellent choice for building scalable and reliable applications.
 
 ## Project Objectives
 
@@ -131,7 +131,7 @@ The authentication service provides several endpoints for user authentication an
 
 - **Endpoint**: `/auth/key`
 - **Method**: `POST`
-- **Description**: Generate a product key for users who want to sign up as an admin or realtor.
+- **Description**: Generate a product key for users who want to sign up as an administrator or realtor.
 - **Request Body**:
     ```json
     {
@@ -147,164 +147,4 @@ The authentication service provides several endpoints for user authentication an
 
 This section of the documentation covers the home management service in the NestJS application. This service allows users to perform operations related to home listings, including creation, retrieval, updating, and deletion.
 
-### Dependencies
-
-- This service relies on [Prisma](https://www.prisma.io/) for database operations.
-
-### Configuration
-
-Ensure that the necessary environment variables are configured for the home management service.
-
-### Usage
-
-The home management service provides endpoints for managing home listings, including filtering, creating, updating, deleting, and inquiring about homes.
-
-### `HomeController` - Managing Homes
-
-The `HomeController` is responsible for managing homes, including listing, creating, updating, and deleting homes. It also handles inquiries and message retrieval for realtors.
-
-#### Home Management Endpoints
-
-##### Get Homes
-
-- **Endpoint**: `/home`
-- **Method**: `GET`
-- **Description**: Get a list of homes based on optional filters like city, price range, and property type.
-- **Query Parameters**:
-    - `city`: Filter by city name.
-    - `minPrice`: Filter by minimum price.
-    - `maxPrice`: Filter by maximum price.
-    - `propertyType`: Filter by property type (e.g., HOUSE, APARTMENT).
-- **Response**: Returns an array of `homeResponseDto` objects.
-
-##### Get Home by ID
-
-- **Endpoint**: `/home/:id`
-- **Method**: `GET`
-- **Description**: Get a specific home by its ID.
-- **URL Parameter**:
-    - `id`: The ID of the home to retrieve.
-- **Response**: Returns a `homeResponseDto` object.
-
-##### Create Home
-
-- **Endpoint**: `/home`
-- **Method**: `POST`
-- **Description**: Create a new home listing.
-- **Request Body**:
-    ```json
-    {
-        "address": "123 Main St",
-        "price": 250000,
-        "land_size": 2000,
-        "city": "Example City",
-        "propertyType": "HOUSE",
-        "bedroom": 3,
-        "bathroom": 2,
-        "images": [
-            {"url": "image1.jpg"},
-            {"url": "image2.jpg"}
-        ]
-    }
-    ```
-- **Response**: Returns a `homeResponseDto` object for the newly created home.
-
-##### Update Home by ID
-
-- **Endpoint**: `/home/:id`
-- **Method**: `PUT`
-- **Description**: Update an existing home listing by its ID.
-- **URL Parameter**:
-    - `id`: The ID of the home to update.
-- **Request Body**: Fields to update (e.g., `address`, `price`, etc.).
-- **Response**: Returns a `homeResponseDto` object for the updated home.
-
-##### Delete Home by ID
-
-- **Endpoint**: `/home/:id`
-- **Method**: `DELETE`
-- **Description**: Delete a home listing by its ID.
-- **URL Parameter**:
-    - `id`: The ID of the home to delete.
-- **Response**: No content (204 No Content) on successful deletion.
-
-##### Inquire about a Home
-
-- **Endpoint**: `/home/inquire/:id`
-- **Method**: `POST`
-- **Description**: Send an inquiry message to the realtor of a specific home.
-- **URL Parameter**:
-    - `id`: The ID of the home to inquire about.
-- **Request Body**:
-    ```json
-    {
-        "message": "I'm interested in this property."
-    }
-    ```
-- **Response**: Returns the inquiry message details.
-
-##### Get Messages for a Home
-
-- **Endpoint**: `/home/:id/messages`
-- **Method**: `GET`
-- **Description**: Retrieve messages related to a specific home. Only realtors can access this endpoint.
-- **URL Parameter**:
-    - `id`: The ID of the home to retrieve messages for.
-- **Response**: Returns an array of messages, including buyer information.
-
-#### Guards and Decorators
-
-- The `@Roles` decorator is used to restrict access to certain endpoints based on the user's role (e.g., ADMIN, REALTOR, BUYER).
-- The `@User` decorator is used to access user information (e.g., ID) for authenticated requests.
-- The `@Roles` decorator and user roles are checked to enforce authorization for various actions.
-
-#### Pipes
-
-- The `ParseIntPipe` is used to parse and validate integer parameters.
-- The `ValidationPipe` is used for request body validation, ensuring that the provided data adheres to the defined DTOs.
-
-### Additional Notes
-
-- Users who want to sign up as buyers do not need a product key.
-- For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
-
-
-## Conclusion
-
-By combining the strengths of Nest.js, TypeScript, Prisma, and PostgreSQL, we are on the path to building a high-quality web application that meets our objectives of efficiency, type safety, robust database interactions, scalability, and maintainability.
-
-P.S.: This document is written based on the sentence and document organization of ChatGPT.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-There are test cases written in home.service.spec.ts and home.controller.spec.ts. You can run and test these.
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+### Dependenci
