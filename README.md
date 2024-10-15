@@ -14,7 +14,7 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 ### 2. TypeScript
 
-[TypeScript](https://www.typescriptlang.org/) is a strongly typed superset of JavaScript that brings static typing to your development workflow. This enables better code quality, improved tooling, and enhanced developer productivity.
+[TypeScript](https://www.typescriptlang.org/) is a strongly typed superset of JavaScript that brings static typing to your development workflow. This enhances code quality, improves tooling, and boosts developer productivity.
 
 ### 3. Prisma
 
@@ -37,7 +37,6 @@ Our project aims to achieve the following objectives:
 4. **Scalable Database Solution**: Utilize PostgreSQL as a scalable and robust relational database, enabling our application to handle data effectively as it grows.
 
 5. **Maintainability and Readability**: Adhere to best practices and coding standards to ensure that the codebase is maintainable, easy to read, and scalable as the project evolves.
-
 
 # Application Documentation
 
@@ -267,7 +266,6 @@ The `HomeController` is responsible for managing homes, including listing, creat
 
 - Users who want to sign up as buyers do not need a product key.
 - For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
-
 
 ## Conclusion
 
