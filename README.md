@@ -4,7 +4,7 @@
 
 ## Overview
 
-Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma, and PostgreSQL to build a robust and scalable web application. This project embodies modern development practices, utilizing a strong, typed language, an efficient backend framework, an ORM for database interaction, and a powerful relational database.
+Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma, and PostgreSQL to build a robust and scalable web application. This project embodies modern development practices, utilizing a strong, typed language; an efficient backend framework; an ORM for database interaction; and a powerful relational database.
 
 ## Technology Stack
 
@@ -169,7 +169,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 
 - **Endpoint**: `/home`
 - **Method**: `GET`
-- **Description**: Get a list of homes based on optional filters like city, price range, and property type.
+- **Description**: Get a list of homes based on optional filters such as city, price range, and property type.
 - **Query Parameters**:
     - `city`: Filter by city name.
     - `minPrice`: Filter by minimum price.
@@ -199,8 +199,8 @@ The `HomeController` is responsible for managing homes, including listing, creat
         "land_size": 2000,
         "city": "Example City",
         "propertyType": "HOUSE",
-        "bedroom": 3,
-        "bathroom": 2,
+        "bedrooms": 3,
+        "bathrooms": 2,
         "images": [
             {"url": "image1.jpg"},
             {"url": "image2.jpg"}
@@ -226,85 +226,4 @@ The `HomeController` is responsible for managing homes, including listing, creat
 - **Description**: Delete a home listing by its ID.
 - **URL Parameter**:
     - `id`: The ID of the home to delete.
-- **Response**: No content (204 No Content) on successful deletion.
-
-##### Inquire about a Home
-
-- **Endpoint**: `/home/inquire/:id`
-- **Method**: `POST`
-- **Description**: Send an inquiry message to the realtor of a specific home.
-- **URL Parameter**:
-    - `id`: The ID of the home to inquire about.
-- **Request Body**:
-    ```json
-    {
-        "message": "I'm interested in this property."
-    }
-    ```
-- **Response**: Returns the inquiry message details.
-
-##### Get Messages for a Home
-
-- **Endpoint**: `/home/:id/messages`
-- **Method**: `GET`
-- **Description**: Retrieve messages related to a specific home. Only realtors can access this endpoint.
-- **URL Parameter**:
-    - `id`: The ID of the home to retrieve messages for.
-- **Response**: Returns an array of messages, including buyer information.
-
-#### Guards and Decorators
-
-- The `@Roles` decorator is used to restrict access to certain endpoints based on the user's role (e.g., ADMIN, REALTOR, BUYER).
-- The `@User` decorator is used to access user information (e.g., ID) for authenticated requests.
-- The `@Roles` decorator and user roles are checked to enforce authorization for various actions.
-
-#### Pipes
-
-- The `ParseIntPipe` is used to parse and validate integer parameters.
-- The `ValidationPipe` is used for request body validation, ensuring that the provided data adheres to the defined DTOs.
-
-### Additional Notes
-
-- Users who want to sign up as buyers do not need a product key.
-- For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
-
-
-## Conclusion
-
-By combining the strengths of Nest.js, TypeScript, Prisma, and PostgreSQL, we are on the path to building a high-quality web application that meets our objectives of efficiency, type safety, robust database interactions, scalability, and maintainability.
-
-P.S.: This document is written based on the sentence and document organization of ChatGPT.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-There are test cases written in home.service.spec.ts and home.controller.spec.ts. You can run and test these.
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+- **Response**: No content (204 No Content) upon successful deletion.
