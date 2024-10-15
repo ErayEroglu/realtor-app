@@ -38,7 +38,6 @@ Our project aims to achieve the following objectives:
 
 5. **Maintainability and Readability**: Adhere to best practices and coding standards to ensure that the codebase is maintainable, easy to read, and scalable as the project evolves.
 
-
 # Application Documentation
 
 ## Overview
@@ -267,7 +266,6 @@ The `HomeController` is responsible for managing homes, including listing, creat
 
 - Users who want to sign up as buyers do not need a product key.
 - For admin and realtor sign-ups, a valid product key is required. The product key is generated using the provided email and user type and is hashed before validation.
-
 
 ## Conclusion
 
