@@ -22,7 +22,7 @@ Welcome to my project, which leverages the power of Nest.js, TypeScript, Prisma,
 
 ### 4. PostgreSQL
 
-[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It's an excellent choice for building scalable and reliable applications.
+[PostgreSQL](https://www.postgresql.org/) is a powerful, open-source relational database system known for its extensibility, robustness, and support for various data types. It is an excellent choice for building scalable and reliable applications.
 
 ## Project Objectives
 
@@ -246,7 +246,7 @@ The `HomeController` is responsible for managing homes, including listing, creat
 ##### Get Messages for a Home
 
 - **Endpoint**: `/home/:id/messages`
-- **Method**: `GET`
+- **Method**: `GETâ
 - **Description**: Retrieve messages related to a specific home. Only realtors can access this endpoint.
 - **URL Parameter**:
     - `id`: The ID of the home to retrieve messages for.
